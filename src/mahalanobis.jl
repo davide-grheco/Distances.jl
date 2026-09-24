@@ -3,7 +3,10 @@
 """
     Mahalanobis(Q; skipchecks=false) <: Metric
 
-Create a Mahalanobis distance (i.e., a bilinear form) with covariance matrix `Q`.
+Create a Mahalanobis distance `sqrt((x - y)' * Q * (x - y))`
+with positive semidefinite matrix `Q`. Note that `Q` enters the bilinear form directly:
+to obtain the classical Mahalanobis distance, pass the inverse of the covariance
+matrix `S`, i.e. `Mahalanobis(inv(S))`.
 Upon construction, both symmetry/self-adjointness and positive semidefiniteness are checked,
 where the latter check can be skipped by passing the keyword argument `skipchecks = true`.
 
@@ -34,7 +37,10 @@ end
 """
     SqMahalanobis(Q; skipchecks=false) <: Metric
 
-Create a squared Mahalanobis distance (i.e., a bilinear form) with covariance matrix `Q`.
+Create a squared Mahalanobis distance `(x - y)' * Q * (x - y)`
+with positive semidefinite matrix `Q`. Note that `Q` enters the bilinear form directly:
+to obtain the classical squared Mahalanobis distance, pass the inverse of the covariance
+matrix `S`, i.e. `SqMahalanobis(inv(S))`.
 Upon construction, both symmetry/self-adjointness and positive semidefiniteness are checked,
 where the latter check can be skipped by passing the keyword argument `skipchecks = true`.
 
