@@ -238,11 +238,10 @@ mainly for conveying the math concepts in a concise way. The actual implementati
 may use a faster way. The arguments `x` and `y` are iterable objects, typically
 arrays of real numbers; `w` is an iterator/array of parameters (like weights or
 periods); `k` and `l` are iterators/arrays of distinct elements of
-any kind; `a` and `b` are iterators/arrays of Bools; and finally, `p` and `q` are
+any kind; `a` and `b` are iterators/arrays of Bools; `p` and `q` are
 iterators/arrays forming a discrete probability distribution and are therefore
-both expected to sum to one. The matrix `Q` in `mahalanobis` and `sqmahalanobis`
-enters the bilinear form directly: to obtain the classical Mahalanobis distance,
-pass the inverse of the covariance matrix `S`, i.e. `mahalanobis(x, y, inv(S))`.
+both expected to sum to one; and finally, `Q` is the precision matrix
+(inverse of the covariance matrix).
 
 ### Precision for Euclidean and SqEuclidean
 
